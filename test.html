@@ -23,6 +23,8 @@
     path1.style="cursor:pointer;fill:#BBB";
     // Now send commands to turn the LED on or off
     var on = false;
+    var on1 = false;
+   
     path.addEventListener("click", function() {
       on = !on;
       if (on)
@@ -34,6 +36,19 @@
       {
         path.style.fill="#444";
         Puck.write('LED2.reset();\n');
+      }
+     
+      path1.addEventListener("click", function() {
+      on1 = !on1;
+      if (on)
+      {
+        path1.style.fill="red";
+        Puck.write('LED1.set();\n');
+      }
+      else
+      {
+        path1.style.fill="#444";
+        Puck.write('LED1.reset();\n');
       }
      
     });
