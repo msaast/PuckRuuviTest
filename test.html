@@ -44,7 +44,7 @@
       {
         path1.style.fill="red";
         Puck.write('LED1.set();\n');
-        Puck.write('console.log(Ruuvitag.getAccelData());\n');
+        Puck.write('var Ruuvitag = require("Ruuvitag");\nRuuvitag.setEnvOn(true);\nRuuvitag.setAccelOn(true);\n');
       }
       else
       {
